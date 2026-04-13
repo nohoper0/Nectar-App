@@ -1,12 +1,42 @@
 import React from 'react';
-import { StatusBar } from 'react-native';
-import AppNavigator from './navigation/AppNavigator';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+
+import Splash from './screens/Splash';
+import Onboard from './screens/Onboard';
+import SignIn from './screens/SignIn';
+import Number from './screens/Number';
+import Verification from './screens/Verification';
+import SelectLocation from './screens/SelectLocation';
+import Login from './screens/Login';
+import SignUp from './screens/SignUp';
+import HomeScreen from './screens/HomeScreen';
+import ProductDetailScreen from './screens/ProductDetailScreen';
+import ExploreScreen from './screens/ExploreScreen';
+import BeveragesScreen from './screens/BeveragesScreen';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <>
-      <StatusBar barStyle="dark-content" backgroundColor="#FFFFFF" />
-      <AppNavigator />
-    </>
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+          <Stack.Screen name="Splash" component={Splash} />
+          <Stack.Screen name="Onboard" component={Onboard} />
+          <Stack.Screen name="SignIn" component={SignIn} />
+          <Stack.Screen name="Number" component={Number} />
+          <Stack.Screen name="Verification" component={Verification} />
+          <Stack.Screen name="SelectLocation" component={SelectLocation} />
+          <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen name="SignUp" component={SignUp} />
+          <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen name="ProductDetail" component={ProductDetailScreen} />
+          <Stack.Screen name="Explore" component={ExploreScreen} />
+          <Stack.Screen name="Beverages" component={BeveragesScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </SafeAreaProvider>
   );
 }
