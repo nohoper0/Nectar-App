@@ -55,8 +55,8 @@ const HomeScreen = () => {
       <View style={styles.navbar}>
         <NavItem icon="🏠" label="Shop" onPress={() => navigation.navigate('Home')} />
         <NavItem icon="🔍" label="Explore" onPress={() => navigation.navigate('Explore')} />
-        <NavItem icon="🛒" label="Cart" onPress={() => {}} />
-        <NavItem icon="❤️" label="Favourite" onPress={() => {}} />
+        <NavItem icon="🛒" label="Cart" onPress={() => navigation.navigate('Cart')} />
+        <NavItem icon="❤️" label="Favourite" onPress={() => navigation.navigate('Favourite')} />
         <NavItem icon="👤" label="Account" onPress={() => navigation.navigate('Login')} />
       </View>
     </View>
@@ -201,12 +201,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     flexDirection: "row",
     justifyContent: "space-around",
-    padding: 10,
+    paddingVertical: 15,
+    paddingHorizontal: 10,
     borderTopWidth: 1,
     borderColor: "#ddd"
   },
 
   navItem: {
-    alignItems: "center"
+    alignItems: "center",
+    paddingVertical: 12,
+    paddingHorizontal: 8
   }
 });
